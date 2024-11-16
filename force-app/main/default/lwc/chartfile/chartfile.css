@@ -1,0 +1,7 @@
+.chart-container {
+    background: linear-gradient(90deg, #4caf50, #2196f3); /* Replace with your desired gradient colors */
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+    width: 300px; /* Adjust the width as needed */
+  }

@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="Zip to Order Attachment" icon-name="utility:upload">
+        <div class="slds-p-around_medium">
+            <!-- Input for uploading the ZIP file -->
+            <lightning-input type="file" label="Upload ZIP" accept=".zip" onchange={handleFileUpload}></lightning-input>
+            <template if:true={uploadedFileName}>
+                <p>Uploaded file: {uploadedFileName}</p>
+            </template>
+
+            <!-- Button to trigger ZIP processing -->
+            <lightning-button label="Process ZIP" onclick={processZip} class="slds-m-top_medium"
+                disabled={processing}></lightning-button>
+
+            <!-- Spinner during processing -->
+            <template if:true={processing}>
+                <lightning-spinner alternative-text="Processing..."></lightning-spinner>
+            </template>
+
+            <!-- Display success message with the number of attached files -->
+            <template if:true={attachedFiles.length}>
+                <p>Successfully attached {attachedFiles.length} PDFs to their corresponding orders.</p>
+            </template>
+
+            <!-- Display error message with the number of non-attached files -->
+            <template if:true={nonAttachedFiles.length}>
+                <p>Failed to attach {nonAttachedFiles.length} PDFs to orders.</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

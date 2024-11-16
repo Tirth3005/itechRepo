@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Score Board">   
+
+        <lightning-datatable
+        key-field="Id"
+        data={myTeamObj.data}
+        columns={columns}
+        onsave={handleSave}
+        draft-values={updatedItems}
+        onrowaction={handleRowAction}
+        hide-checkbox-column="true">
+    </lightning-datatable>
+    
+    </lightning-card>
+</template>
